@@ -1,17 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>PMIC Reparaciones | Laboratorio Técnico Especializado en Santa Rosa, La Pampa</title>
-  <meta name="description" content="Servicio técnico especializado en celulares Android, iPhone, Notebooks y PlayStation en Santa Rosa, La Pampa. Cotizador interactivo a WhatsApp, repuestos premium y garantía escrita.">
+
+  <!-- 1. TÍTULO OPTIMIZADO (Menos de 60 caracteres para que no se corte en Google) -->
+  <title>PMIC Reparaciones | Laboratorio Técnico en Santa Rosa</title>
+
+  <!-- 2. DESCRIPCIÓN META -->
+  <meta name="description" content="Servicio técnico especializado en celulares Android, iPhone, Notebooks y consolas en Santa Rosa, La Pampa. Cotizá en vivo por WhatsApp.">
   <meta name="theme-color" content="#ff6a00">
   <meta name="google-site-verification" content="OGo8wSNspcLseErz2RfKEAuAQx2VlbG1Nb3356Tv5xE" /> 
-  <!-- Open Graph / Meta Social -->
+
+  <!-- 3. NOMBRE DEL SITIO Y OPEN GRAPH (Para que Google y WhatsApp no muestren 'GitHub Pages') -->
+  <meta property="og:site_name" content="PMIC Reparaciones">
   <meta property="og:title" content="PMIC Reparaciones | Celulares, Notebooks y Consolas">
-  <meta property="og:description" content="¿Se rompió justo cuando más lo necesitabas? Reparaciones rápidas con garantía en Santa Rosa, La Pampa. Cotizá en vivo a WhatsApp.">
+  <meta property="og:description" content="Laboratorio técnico en Santa Rosa, La Pampa. Reparaciones con repuestos premium y garantía.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/pmic-banner.jpg">
+  <!-- Importante: En Open Graph la URL de la imagen debe ser completa con https:// -->
+  <meta property="og:url" content="https://pmicreparaciones.github.io/pmic-reparaciones/">
+  <meta property="og:image" content="https://pmicreparaciones.github.io/pmic-reparaciones/assets/pmic-banner.jpg">
+
+  <!-- 4. FAVICONS (Cuadrados y compatibles con Google Search) -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/chip-logo-clean.png">
+
+  <!-- 5. DATOS ESTRUCTURADOS PARA GOOGLE (Quita 'GitHub Pages documentation' y le da identidad de negocio) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://pmicreparaciones.github.io/pmic-reparaciones/#website",
+        "url": "https://pmicreparaciones.github.io/pmic-reparaciones/",
+        "name": "PMIC Reparaciones",
+        "alternateName": ["PMIC", "PMIC Reparaciones Santa Rosa"]
+      },
+      {
+        "@type": "ElectronicsRepairShop",
+        "@id": "https://pmicreparaciones.github.io/pmic-reparaciones/#store",
+        "name": "PMIC Reparaciones",
+        "url": "https://pmicreparaciones.github.io/pmic-reparaciones/",
+        "logo": "https://pmicreparaciones.github.io/pmic-reparaciones/assets/favicon-48x48.png",
+        "image": "https://pmicreparaciones.github.io/pmic-reparaciones/assets/pmic-banner.jpg",
+        "description": "Laboratorio técnico especializado en microelectrónica y reparación de celulares, notebooks y consolas.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Santa Rosa",
+          "addressRegion": "La Pampa",
+          "addressCountry": "AR"
+        }
+      }
+    ]
+  }
+  </script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,11 +68,12 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
-<link rel="icon" type="image/png" href="assets/chip-logo-clean.png">
+</head>
+  <link rel="icon" type="image/png" href="assets/chip-logo-clean.png">
 </head>
 <body>
 
-<!-- Background Animated High-Tech Canvas -->
+  <!-- Background Animated High-Tech Canvas -->
   <canvas id="circuit-bg"></canvas>
   <div class="ambient-glow-1"></div>
   <div class="ambient-glow-2"></div>
@@ -37,11 +83,22 @@
        ========================================================================== -->
   <header class="site-header">
     <div class="container header-inner">
-      <!-- Brand Logo -->
-      <a href="#inicio" class="brand-link" title="PMIC Reparaciones - Santa Rosa La Pampa">
-        <img src="assets/chip-logo-clean.png" alt="PMIC Chip Logo" class="brand-chip-icon">
+      <!-- Brand Logo & Identity (Foto y Nombre Primero) -->
+      <a href="#inicio" class="brand-link" title="PMIC Reparaciones | Laboratorio Técnico - Santa Rosa La Pampa">
+        <div class="brand-identity-wrap">
+          <div class="brand-avatar-frame" title="Chelo - PMIC Reparaciones (Laboratorio Técnico)">
+            <img src="assets/chelo-avatar.jpg" alt="Chelo PMIC Reparaciones" class="brand-profile-photo" onerror="this.onerror=null; this.src='assets/chip-logo-clean.png';">
+            <span class="brand-avatar-dot" title="Taller y Laboratorio Abierto"></span>
+          </div>
+          <img src="assets/chip-logo-clean.png" alt="PMIC Chip Logo" class="brand-chip-icon">
+        </div>
+
         <div class="brand-text-wrapper">
-          <img src="assets/pmic-brand-clean.png" alt="PMIC REPARACIONES" class="brand-pmic-img">
+          <div class="brand-title-badge">
+            <span class="brand-title-main">PMIC Reparaciones</span>
+            <span class="brand-sep">|</span>
+            <span class="brand-title-lab">Laboratorio Técnico</span>
+          </div>
           <div class="brand-location-tag">
             <i class="fa-solid fa-location-dot"></i> Santa Rosa, La Pampa
           </div>
@@ -52,17 +109,31 @@
       <nav aria-label="Navegación principal">
         <ul class="nav-links">
           <li><a href="#inicio" class="nav-link">Inicio</a></li>
-          <li><a href="#especialidades" class="nav-link">Dispositivos</a></li>
-          <li><a href="#cotizador" class="nav-link">Cotizador Online</a></li>
-          <li><a href="#por-que-pmic" class="nav-link">Laboratorio</a></li>
-          <li><a href="#medios-pago" class="nav-link">Pagos</a></li>
+          <li><a href="#especialidades" class="nav-link">Servicios</a></li>
+          <li><a href="#trayectoria" class="nav-link">Trayectoria</a></li>
+          <li><a href="#galeria" class="nav-link">Trabajos</a></li>
+          <li><a href="#cotizador" class="nav-link">Cotizador</a></li>
+          <li><a href="#testimonios" class="nav-link">Reseñas</a></li>
           <li><a href="#garantia" class="nav-link">Garantía</a></li>
           <li><a href="#contacto" class="nav-link">Contacto</a></li>
         </ul>
       </nav>
 
-      <!-- Header CTAs & Status -->
+      <!-- Header CTAs, Social & Status -->
       <div class="header-cta-group">
+        <!-- Quick Social Icons -->
+        <div class="social-links-bar" style="margin-right: 0.2rem;">
+          <a href="https://www.instagram.com/pmicreparaciones/" target="_blank" class="social-link-btn btn-instagram" title="Instagram @pmicreparaciones" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@chelo.pmicreparaciones" target="_blank" class="social-link-btn btn-tiktok" title="TikTok @chelo.pmicreparaciones" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+          <a href="https://www.facebook.com/chelo.pmicreparaciones/" target="_blank" class="social-link-btn btn-facebook" title="Facebook PMIC Reparaciones" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+        </div>
+
         <div class="status-pill" title="Atendiendo consultas en Santa Rosa">
           <span class="status-dot"></span>
           <span>Taller Abierto</span>
@@ -82,12 +153,22 @@
     <!-- Mobile Slide Drawer -->
     <div id="mobile-nav-drawer" class="mobile-nav-drawer">
       <a href="#inicio" class="mobile-nav-link"><span>Inicio</span> <i class="fa-solid fa-chevron-right"></i></a>
-      <a href="#especialidades" class="mobile-nav-link"><span>Dispositivos & Especialidades</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="#especialidades" class="mobile-nav-link"><span>Directorio de Servicios</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="#trayectoria" class="mobile-nav-link"><span>Presencia & Trayectoria (Expos)</span> <i class="fa-solid fa-award text-orange"></i></a>
+      <a href="#galeria" class="mobile-nav-link"><span>Galería de Trabajos (Antes y Después)</span> <i class="fa-solid fa-chevron-right"></i></a>
       <a href="#cotizador" class="mobile-nav-link"><span>Cotizador Interactivo WhatsApp</span> <i class="fa-solid fa-bolt text-orange"></i></a>
-      <a href="#por-que-pmic" class="mobile-nav-link"><span>¿Por Qué PMIC?</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="#testimonios" class="mobile-nav-link"><span>Opiniones de Clientes (5.0 ★)</span> <i class="fa-solid fa-chevron-right"></i></a>
       <a href="#medios-pago" class="mobile-nav-link"><span>Medios de Pago</span> <i class="fa-solid fa-chevron-right"></i></a>
       <a href="#garantia" class="mobile-nav-link"><span>Garantía Legal (Ley 24.240)</span> <i class="fa-solid fa-shield-halved text-orange"></i></a>
       <a href="#contacto" class="mobile-nav-link"><span>Ubicación & Teléfono</span> <i class="fa-solid fa-chevron-right"></i></a>
+
+      <!-- Mobile Social Strip -->
+      <div style="display: flex; gap: 0.8rem; justify-content: center; margin-top: 0.5rem; padding-top: 0.8rem; border-top: 1px solid var(--border-subtle);">
+        <a href="https://www.instagram.com/pmicreparaciones/" target="_blank" class="social-link-btn btn-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@chelo.pmicreparaciones" target="_blank" class="social-link-btn btn-tiktok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://www.facebook.com/chelo.pmicreparaciones/" target="_blank" class="social-link-btn btn-facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+
       <a href="https://wa.me/5492954274960?text=Hola%20PMIC%20Reparaciones!%20Quiero%20hacer%20una%20consulta." target="_blank" class="btn btn-whatsapp" style="width: 100%; margin-top: 0.5rem;">
         <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp Directo
       </a>
@@ -101,8 +182,15 @@
     <div class="container hero-grid">
       <!-- Left Column: Copy & Actions -->
       <div class="hero-content">
+        <!-- Marca / Título Destacada en la parte superior inicial de la página -->
+        <div class="hero-top-brand-highlight">
+          <span class="brand-h-name">PMIC Reparaciones</span>
+          <span class="brand-h-sep">|</span>
+          <span class="brand-h-lab">Laboratorio Técnico</span>
+        </div>
+
         <div class="hero-badge-live">
-          <i class="fa-solid fa-microchip"></i> Microelectrónica & Laboratorio Especializado
+          <i class="fa-solid fa-microchip"></i> Microelectrónica & Diagnóstico Avanzado en Santa Rosa, La Pampa
         </div>
 
         <h1 class="hero-headline">
@@ -358,102 +446,540 @@
   </section>
 
   <!-- ==========================================================================
-       SPECIALTIES & SERVICES
+       DIRECTORIO DE SERVICIOS PROFESIONAL
        ========================================================================== -->
   <section id="especialidades" class="services-section">
     <div class="container">
       <div class="section-header-center">
-        <span class="section-tag"><i class="fa-solid fa-screwdriver-wrench"></i> Especialidades Técnicas</span>
-        <h2 class="section-title">Soluciones para cada <span class="text-orange">Dispositivo</span></h2>
+        <span class="section-tag"><i class="fa-solid fa-layer-group"></i> Directorio de Especialidades</span>
+        <h2 class="section-title">Directorio de Servicios <span class="text-orange">Técnicos</span></h2>
         <p class="section-subtitle">
-          Trabajamos con instrumental de precisión para microelectrónica, diagnóstico por osciloscopio y cámaras térmicas.
+          Laboratorio de microelectrónica integral en Santa Rosa, La Pampa. Diagnóstico certero, repuestos premium y garantía legal de 30 días.
         </p>
       </div>
 
-      <div class="services-grid">
-        <!-- 1. ANDROID -->
-        <div class="service-card">
-          <div class="service-icon-box">
-            <i class="fa-brands fa-android"></i>
+      <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));">
+        <!-- 1. CELULARES (ANDROID / IPHONE) -->
+        <div class="directory-card">
+          <div>
+            <span class="directory-badge-top"><i class="fa-solid fa-bolt"></i> Reparación Express</span>
+            <div class="directory-header">
+              <div class="directory-icon-box">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+              </div>
+              <div>
+                <h3 class="directory-title">Celulares</h3>
+                <span class="directory-brands">Android (Samsung, Moto, Xiaomi) & Apple iPhone</span>
+              </div>
+            </div>
+
+            <p class="service-description">
+              Solución integral para dispositivos móviles de todas las gamas. Especialistas en recuperación de placas con cortos y cambio de componentes sin perder tus datos.
+            </p>
+
+            <div class="directory-tags-cloud">
+              <span class="service-chip-tag"><i class="fa-solid fa-check"></i> Módulos AMOLED / OLED</span>
+              <span class="service-chip-tag"><i class="fa-solid fa-check"></i> Baterías Salud 100%</span>
+              <span class="service-chip-tag"><i class="fa-solid fa-check"></i> Pines Carga Tipo-C / Lightning</span>
+              <span class="service-chip-tag"><i class="fa-solid fa-check"></i> Microsoldadura IC PMIC</span>
+              <span class="service-chip-tag"><i class="fa-solid fa-check"></i> Rescate de Mojados (Ultrasonido)</span>
+              <span class="service-chip-tag"><i class="fa-solid fa-check"></i> Cambio Glass Trasero Láser</span>
+            </div>
+
+            <ul class="service-features-list">
+              <li><i class="fa-solid fa-shield-halved"></i> <strong>Apple iPhone:</strong> Pantallas True Tone sin error, Face ID y cámaras.</li>
+              <li><i class="fa-solid fa-shield-halved"></i> <strong>Android:</strong> Placas en corto, líneas quemadas y conectores FPC.</li>
+              <li><i class="fa-solid fa-clock"></i> <strong>Demora habitual:</strong> En el día (2 a 4 horas con repuesto en stock).</li>
+            </ul>
           </div>
-          <h3 class="service-title">Celulares Android</h3>
-          <p class="service-description">
-            Reparación integral para Samsung, Motorola, Xiaomi, TCL y todas las marcas líderes con repuestos de alta calidad.
-          </p>
-          <ul class="service-features-list">
-            <li><i class="fa-solid fa-check"></i> Cambio de Módulo de Pantalla AMOLED / LCD</li>
-            <li><i class="fa-solid fa-check"></i> Reemplazo de Baterías de alto rendimiento</li>
-            <li><i class="fa-solid fa-check"></i> Pines de carga Tipo-C & Micro USB</li>
-            <li><i class="fa-solid fa-check"></i> Microelectrónica de placa (IC de carga, backlight)</li>
-            <li><i class="fa-solid fa-check"></i> Tratamiento de equipos mojados por ultrasonido</li>
-          </ul>
-          <a href="#cotizador" class="service-quote-trigger">
-            <span>Cotizar Android</span> <i class="fa-solid fa-arrow-right"></i>
+
+          <a href="#cotizador" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;">
+            <i class="fa-brands fa-whatsapp"></i> Cotizar Celular en WhatsApp
           </a>
         </div>
 
-        <!-- 2. IPHONE -->
-        <div class="service-card">
-          <div class="service-icon-box">
-            <i class="fa-brands fa-apple"></i>
+        <!-- 2. NOTEBOOKS & MACBOOKS -->
+        <div class="directory-card">
+          <div>
+            <span class="directory-badge-top"><i class="fa-solid fa-microchip"></i> Placa & Hardware</span>
+            <div class="directory-header">
+              <div class="directory-icon-box">
+                <i class="fa-solid fa-laptop"></i>
+              </div>
+              <div>
+                <h3 class="directory-title">Notebooks & MacBooks</h3>
+                <span class="directory-brands">Apple Mac (M1/M2/Intel) & Windows (Dell, Lenovo, HP, Asus)</span>
+              </div>
+            </div>
+
+            <p class="service-description">
+              Recuperamos tu herramienta de trabajo y estudio. Desde problemas de encendido a nivel microelectrónico hasta reconstrucción física y upgrades de velocidad extrema.
+            </p>
+
+            <div class="directory-tags-cloud">
+              <span class="service-chip-tag"><i class="fa-solid fa-check"></i> Reballing / Microsoldadura</span>
+              <span class="service-chip-tag"><i class="fa-solid fa-check"></i> Pantallas FHD / Retina / 2K</span>
+              <span class="service-chip-tag"><i class="fa-solid fa-check"></i> Reconstrucción Bisagras</span>
+              <span class="service-chip-tag"><i class="fa-solid fa-check"></i> Upgrade SSD NVMe Ultra Rápido</span>
+              <span class="service-chip-tag"><i class="fa-solid fa-check"></i> Ampliación Memoria RAM</span>
+              <span class="service-chip-tag"><i class="fa-solid fa-check"></i> Pasta Térmica Arctic MX-4</span>
+            </div>
+
+            <ul class="service-features-list">
+              <li><i class="fa-solid fa-shield-halved"></i> <strong>MacBooks:</strong> Reparación de placas lógicas con líquido, teclado y batería.</li>
+              <li><i class="fa-solid fa-shield-halved"></i> <strong>Notebooks Windows:</strong> Bisagras rotas reconstruidas con resina reforzada.</li>
+              <li><i class="fa-solid fa-bolt"></i> <strong>Optimización:</strong> Tu equipo arranca en 5 segundos con nuevo SSD.</li>
+            </ul>
           </div>
-          <h3 class="service-title">Apple iPhone</h3>
-          <p class="service-description">
-            Especialistas en la manzana. Desde iPhone 7 hasta los últimos modelos Pro Max, cuidando cada detalle estético y funcional.
-          </p>
-          <ul class="service-features-list">
-            <li><i class="fa-solid fa-check"></i> Pantallas Super Retina XDR OLED originales</li>
-            <li><i class="fa-solid fa-check"></i> Cambio de Baterías sin mensaje de error</li>
-            <li><i class="fa-solid fa-check"></i> Reparación de Tapa Trasera con tecnología láser</li>
-            <li><i class="fa-solid fa-check"></i> Reconstrucción de Face ID & Auriculares</li>
-            <li><i class="fa-solid fa-check"></i> Reparación de placa base y microsoldadura SMD</li>
-          </ul>
-          <a href="#cotizador" class="service-quote-trigger">
-            <span>Cotizar iPhone</span> <i class="fa-solid fa-arrow-right"></i>
+
+          <a href="#cotizador" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;">
+            <i class="fa-brands fa-whatsapp"></i> Cotizar Notebook / Mac
           </a>
         </div>
 
-        <!-- 3. NOTEBOOKS & PC -->
-        <div class="service-card">
-          <div class="service-icon-box">
-            <i class="fa-solid fa-laptop"></i>
+        <!-- 3. CONSOLAS (PLAYSTATION / XBOX / NINTENDO) -->
+        <div class="directory-card">
+          <div>
+            <span class="directory-badge-top"><i class="fa-solid fa-gamepad"></i> Gaming Lab</span>
+            <div class="directory-header">
+              <div class="directory-icon-box">
+                <i class="fa-brands fa-playstation"></i>
+              </div>
+              <div>
+                <h3 class="directory-title">Consolas & Mandos</h3>
+                <span class="directory-brands">PlayStation 5 / PS4, Xbox Series X/S & Nintendo Switch</span>
+              </div>
+            </div>
+
+            <p class="service-description">
+              Especialistas en hardware gamer. Reparamos fallas de video, sobrecalentamiento crítico, fuentes dañadas por tormentas y joysticks con tecnología magnética.
+            </p>
+
+            <div class="directory-tags-cloud">
+              <span class="service-chip-tag"><i class="fa-solid fa-check"></i> Cambio Puerto HDMI Original</span>
+              <span class="service-chip-tag"><i class="fa-solid fa-check"></i> Metal Líquido PS5 Original</span>
+              <span class="service-chip-tag"><i class="fa-solid fa-check"></i> Fuentes de Poder Internas</span>
+              <span class="service-chip-tag"><i class="fa-solid fa-check"></i> Solución Turbina Ruidosa</span>
+              <span class="service-chip-tag"><i class="fa-solid fa-check"></i> Joysticks Drift (Hall Effect)</span>
+              <span class="service-chip-tag"><i class="fa-solid fa-check"></i> Lectores Ópticos Blu-Ray</span>
+            </div>
+
+            <ul class="service-features-list">
+              <li><i class="fa-solid fa-shield-halved"></i> <strong>PS5 & PS4:</strong> Cambio de HDMI con microscopio y reposición de pistas.</li>
+              <li><i class="fa-solid fa-shield-halved"></i> <strong>Mandos DualSense / Xbox:</strong> Análogos Hall Effect (sin drift futuro).</li>
+              <li><i class="fa-solid fa-snowflake"></i> <strong>Refrigeración:</strong> Desarme químico y pasta térmica de alto rendimiento.</li>
+            </ul>
           </div>
-          <h3 class="service-title">Notebooks & PC</h3>
-          <p class="service-description">
-            Tu herramienta de trabajo y estudio en las mejores manos. Hardware, software y optimizaciones extremas de velocidad.
+
+          <a href="#cotizador" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;">
+            <i class="fa-brands fa-whatsapp"></i> Cotizar Consola en WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PRESENCIA Y TRAYECTORIA EN EL SECTOR (FORMACIÓN Y DIVULGACIÓN)
+       ========================================================================== -->
+  <section id="trayectoria" class="trayectoria-section">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> // FORMACIÓN Y DIVULGACIÓN</span>
+        <h2 class="section-title">PRESENCIA Y TRAYECTORIA <span class="text-orange">EN EL SECTOR</span></h2>
+        <p class="section-subtitle">
+          Compromiso activo con la microelectrónica de vanguardia, actualización continua en esquemáticos y participación en los eventos más importantes de reparación del país.
+        </p>
+      </div>
+
+      <!-- Main Trayectoria Block -->
+      <div class="trayectoria-hero-card">
+        <div class="trayectoria-content-col">
+          <div class="trayectoria-badge-top">
+            <i class="fa-solid fa-award"></i> Capacitación & Excelencia Técnica Comprobada
+          </div>
+
+          <p class="trayectoria-main-p">
+            PMIC Reparaciones participa activamente en las exposiciones y encuentros de microelectrónica más destacados del país, como <strong>Expo Repara Rosario</strong> y <strong>Fix Expo La Pampa</strong>. Compartimos experiencias, ponencias y jornadas de capacitación técnica avanzada junto a reconocidos referentes del sector como <strong>Jaider Durán</strong>, <strong>Edgar Aguirre</strong> y <strong>Wilson Cosabalente</strong>. Nuestra presencia continua en estos eventos garantiza la vanguardia en métodos de diagnóstico y reparación de última generación.
           </p>
-          <ul class="service-features-list">
-            <li><i class="fa-solid fa-check"></i> Upgrade a Discos SSD NVMe (¡Tu notebook vuela!)</li>
-            <li><i class="fa-solid fa-check"></i> Cambio de pantallas de notebook quebradas</li>
-            <li><i class="fa-solid fa-check"></i> Reparación y reconstrucción de bisagras rotas</li>
-            <li><i class="fa-solid fa-check"></i> Cambio de teclados, cargadores y baterías</li>
-            <li><i class="fa-solid fa-check"></i> Limpieza profunda y cambio de pasta térmica Arctic</li>
-          </ul>
-          <a href="#cotizador" class="service-quote-trigger">
-            <span>Cotizar Notebook</span> <i class="fa-solid fa-arrow-right"></i>
+
+          <!-- Puntos destacados con flechas luminosas -->
+          <div class="trayectoria-points-grid">
+            <div class="trayectoria-point-item">
+              <span class="point-arrow">►</span>
+              <div class="point-content">
+                <strong>PARTICIPACIÓN ACTIVA EN EXPO REPARA ROSARIO Y FIX EXPO LA PAMPA</strong>
+                <p>Presencia constante y activa en las convenciones y certámenes nacionales más exigentes del rubro técnico.</p>
+              </div>
+            </div>
+
+            <div class="trayectoria-point-item">
+              <span class="point-arrow">►</span>
+              <div class="point-content">
+                <strong>CAPACITACIÓN TÉCNICA ESPECIALIZADA CON WILSON COSABALENTE Y REFERENTES DEL SECTOR</strong>
+                <p>Entrenamiento técnico avanzado y mano a mano con referentes de renombre internacional en microelectrónica.</p>
+              </div>
+            </div>
+
+            <div class="trayectoria-point-item">
+              <span class="point-arrow">►</span>
+              <div class="point-content">
+                <strong>ACTUALIZACIÓN CONTINUA EN ESQUEMAS Y FALLAS TÍPICAS</strong>
+                <p>Análisis exhaustivo de planos esquemáticos, líneas de alimentación y protocolos de diagnóstico de última generación.</p>
+              </div>
+            </div>
+
+            <div class="trayectoria-point-item">
+              <span class="point-arrow">►</span>
+              <div class="point-content">
+                <strong>RESPALDO TÉCNICO DE LABORATORIO COMPROBADO</strong>
+                <p>Intervenciones certeras respaldadas con instrumental de alta gama: microscopio trinocular, cámaras térmicas y soldadura SMD.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mentions Bar -->
+          <div class="referentes-tag-bar">
+            <span class="referentes-label"><i class="fa-solid fa-users-gear"></i> Jornadas Técnicas junto a:</span>
+            <span class="referente-pill"><i class="fa-solid fa-user-check"></i> Wilson Cosabalente</span>
+            <span class="referente-pill"><i class="fa-solid fa-user-check"></i> Jaider Durán</span>
+            <span class="referente-pill"><i class="fa-solid fa-user-check"></i> Edgar Aguirre</span>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Profile & Certifications Card -->
+        <div class="trayectoria-visual-col">
+          <div class="tech-card-3d trayectoria-profile-card">
+            <div class="tech-card-header">
+              <div class="terminal-dots">
+                <span class="terminal-dot dot-red"></span>
+                <span class="terminal-dot dot-yellow"></span>
+                <span class="terminal-dot dot-green"></span>
+              </div>
+              <span class="tech-card-badge">PMIC // PERFIL OFICIAL</span>
+            </div>
+
+            <div class="trayectoria-photo-frame">
+              <img src="assets/chelo-perfil.jpg" alt="Chelo en el Laboratorio PMIC Reparaciones Santa Rosa" class="trayectoria-profile-img">
+              <div class="photo-overlay-badge">
+                <i class="fa-solid fa-shield-halved"></i> Chelo • PMIC Reparaciones
+                <span>Laboratorio Técnico • Santa Rosa, La Pampa</span>
+              </div>
+            </div>
+
+            <div class="trayectoria-stats-row">
+              <div class="stat-mini">
+                <span class="stat-mini-num">+10</span>
+                <span class="stat-mini-lbl">Años Trayectoria</span>
+              </div>
+              <div class="stat-mini">
+                <span class="stat-mini-num">100%</span>
+                <span class="stat-mini-lbl">Instrumental Propio</span>
+              </div>
+              <div class="stat-mini">
+                <span class="stat-mini-num">Nacional</span>
+                <span class="stat-mini-lbl">Expos & Encuentros</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Galería de Imágenes de Eventos (Expo Repara y Expofix) -->
+      <div class="event-gallery-wrap">
+        <div class="event-gallery-header">
+          <div>
+            <span class="section-tag" style="margin-bottom: 0.3rem;"><i class="fa-solid fa-camera-retro"></i> Galería de Eventos</span>
+            <h3 class="event-gallery-title">Participación en <span class="text-orange">Expo Repara Rosario & Fix Expo</span></h3>
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&query=PMIC+Reparaciones+Santa+Rosa" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.55rem 1.1rem;">
+            <i class="fa-brands fa-google"></i> Ver Fotos en Google Mi Negocio <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
           </a>
         </div>
 
-        <!-- 4. PLAYSTATION & CONSOLAS -->
-        <div class="service-card">
-          <div class="service-icon-box">
-            <i class="fa-brands fa-playstation"></i>
+        <div class="event-gallery-grid">
+          <!-- Event Card 1: Expo Repara Rosario Premiación -->
+          <div class="event-card">
+            <div class="event-img-container">
+              <img src="assets/expo-repara-premiacion.jpg" alt="Premiación en escenario principal - Expo Repara Rosario" class="event-img" onerror="this.onerror=null; this.src='assets/laboratorio-taller.jpg';">
+              <div class="event-tag-badge">
+                <i class="fa-solid fa-trophy text-orange"></i> Expo Repara Rosario
+              </div>
+              <div class="event-stage-tag">Escenario Principal</div>
+            </div>
+            <div class="event-card-body">
+              <div class="event-date-row">
+                <span><i class="fa-solid fa-location-dot"></i> Ros Tower, Rosario</span>
+                <span><i class="fa-solid fa-award"></i> Premiación Oficial</span>
+              </div>
+              <h4 class="event-title">Premiación en Escenario Principal</h4>
+              <p class="event-description">
+                Participación destacada y premiación en escenario principal durante Expo Repara Rosario, compartiendo jornadas junto a Jaider Durán, Edgar Aguirre y Wilson Cosabalente.
+              </p>
+              <div class="event-footer-link">
+                <span>Ruta local: <code>assets/expo-repara-premiacion.jpg</code></span>
+              </div>
+            </div>
           </div>
-          <h3 class="service-title">PlayStation & Consolas</h3>
-          <p class="service-description">
-            Especialistas en consolas de videojuegos PlayStation 4, PlayStation 5, Xbox y Nintendo Switch. ¡Volvé al juego sin lag!
-          </p>
-          <ul class="service-features-list">
-            <li><i class="fa-solid fa-check"></i> Cambio de puerto HDMI original (falla sin señal)</li>
-            <li><i class="fa-solid fa-check"></i> Mantenimiento PS5 con Metal Líquido original</li>
-            <li><i class="fa-solid fa-check"></i> Reparación de fuentes de alimentación internas</li>
-            <li><i class="fa-solid fa-check"></i> Solución a sobrecalentamiento y turbina al 100%</li>
-            <li><i class="fa-solid fa-check"></i> Reparación de Joysticks con Drift (Hall Effect)</li>
-          </ul>
-          <a href="#cotizador" class="service-quote-trigger">
-            <span>Cotizar Consola</span> <i class="fa-solid fa-arrow-right"></i>
-          </a>
+
+          <!-- Event Card 2: Fix Expo La Pampa -->
+          <div class="event-card">
+            <div class="event-img-container">
+              <img src="assets/fix-expo-pampa.png" alt="Fix Expo La Pampa - PMIC Reparaciones" class="event-img" onerror="this.onerror=null; this.src='assets/microscopio-banco.jpg';">
+              <div class="event-tag-badge">
+                <i class="fa-solid fa-microchip text-orange"></i> Fix Expo La Pampa
+              </div>
+              <div class="event-stage-tag">Santa Rosa</div>
+            </div>
+            <div class="event-card-body">
+              <div class="event-date-row">
+                <span><i class="fa-solid fa-location-dot"></i> Santa Rosa, La Pampa</span>
+                <span><i class="fa-solid fa-calendar-check"></i> Edición Oficial</span>
+              </div>
+              <h4 class="event-title">Fix Expo La Pampa</h4>
+              <p class="event-description">
+                Encuentro de microelectrónica y reparación en nuestra provincia, fomentando el intercambio técnico y divulgación de métodos avanzados de diagnóstico.
+              </p>
+              <div class="event-footer-link">
+                <span>Ruta local: <code>assets/fix-expo-pampa.png</code></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event Card 3: Laboratorio Propio y Certificaciones -->
+          <div class="event-card">
+            <div class="event-img-container">
+              <img src="assets/laboratorio-taller.jpg" alt="Laboratorio Oficial y Diplomas PMIC Reparaciones" class="event-img">
+              <div class="event-tag-badge">
+                <i class="fa-solid fa-certificate text-orange"></i> Laboratorio Propio
+              </div>
+              <div class="event-stage-tag">Certificaciones</div>
+            </div>
+            <div class="event-card-body">
+              <div class="event-date-row">
+                <span><i class="fa-solid fa-microscope"></i> Santa Rosa, La Pampa</span>
+                <span><i class="fa-solid fa-check-double"></i> Instrumental SMD</span>
+              </div>
+              <h4 class="event-title">Respaldo Técnico Comprobado</h4>
+              <p class="event-description">
+                Laboratorio equipado con microscopios trinoculares, estaciones de aire caliente y certificaciones internacionales expuestas en pared de banco técnico.
+              </p>
+              <div class="event-footer-link">
+                <span>Ruta local: <code>assets/laboratorio-taller.jpg</code></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event Card 4: Fachada y Confianza -->
+          <div class="event-card">
+            <div class="event-img-container">
+              <img src="assets/taller-entrada.jpg" alt="Taller Oficial PMIC Reparaciones en Google Mi Negocio" class="event-img">
+              <div class="event-tag-badge">
+                <i class="fa-solid fa-store text-orange"></i> Punto Oficial
+              </div>
+              <div class="event-stage-tag">Google Negocio</div>
+            </div>
+            <div class="event-card-body">
+              <div class="event-date-row">
+                <span><i class="fa-solid fa-location-dot"></i> Av. Circunvalación 1587</span>
+                <span><i class="fa-brands fa-google"></i> Perfil Verificado</span>
+              </div>
+              <h4 class="event-title">Perfil Google Mi Negocio</h4>
+              <p class="event-description">
+                Fotos reales del taller y de nuestras participaciones en eventos disponibles públicamente en Google Maps y Google Mi Negocio para máxima transparencia.
+              </p>
+              <div class="event-footer-link">
+                <span>Ruta local: <code>assets/taller-entrada.jpg</code></span>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Helper de gestión de imágenes para el usuario -->
+        <div class="assets-replace-helper">
+          <div class="helper-icon"><i class="fa-solid fa-camera"></i></div>
+          <div class="helper-text">
+            <h5><i class="fa-solid fa-circle-check"></i> Galería de Eventos Configurada para Reemplazo Rápido</h5>
+            <p>Las imágenes están vinculadas en la carpeta local <code>/assets/</code> (como <code>assets/expo-repara-premiacion.jpg</code>, <code>assets/fix-expo-pampa.png</code>, <code>assets/laboratorio-taller.jpg</code>). Podés reemplazar directamente los archivos por las fotos de tu perfil de Google Mi Negocio o sumar nuevas fotos cuando desees sin alterar la estructura.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       GALERÍA DE TRABAJOS / ANTES Y DESPUÉS (MICROSOLDADURA & TALLER)
+       ========================================================================== -->
+  <section id="galeria" class="gallery-section">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-tag"><i class="fa-solid fa-images"></i> Evidencia en Laboratorio</span>
+        <h2 class="section-title">Galería de Trabajos: <span class="text-orange">Antes & Después</span></h2>
+        <p class="section-subtitle">
+          Casos reales resueltos en nuestro taller de Santa Rosa, La Pampa. Mirá la diferencia de una intervención técnica profesional con microscopio e instrumental de punta.
+        </p>
+      </div>
+
+      <!-- Category Filter Bar -->
+      <div class="gallery-filters-bar">
+        <button type="button" class="gallery-filter-btn active" data-filter="all">Todos los Trabajos</button>
+        <button type="button" class="gallery-filter-btn" data-filter="microsoldering">Microsoldadura SMD</button>
+        <button type="button" class="gallery-filter-btn" data-filter="celulares">Celulares (Android / iPhone)</button>
+        <button type="button" class="gallery-filter-btn" data-filter="notebooks">Notebooks & Mac</button>
+        <button type="button" class="gallery-filter-btn" data-filter="consolas">Consolas (PS5 / Xbox)</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid">
+        <!-- TRABAJO 1: MICROSOLDADURA SMD (IC PMIC) -->
+        <div class="gallery-card" data-category="microsoldering">
+          <div class="gallery-visual-frame">
+            <div class="gallery-visual-split">
+              <!-- Lado Antes -->
+              <div class="split-side side-before">
+                <span class="split-badge badge-before">Antes</span>
+                <i class="fa-solid fa-triangle-exclamation split-visual-icon icon-damaged"></i>
+                <span class="split-caption">Corto en Placa // Muerto</span>
+              </div>
+              <!-- Lado Después -->
+              <div class="split-side side-after">
+                <span class="split-badge badge-after">Después</span>
+                <i class="fa-solid fa-microchip split-visual-icon icon-repaired"></i>
+                <span class="split-caption">IC PMIC Nuevo // 100% OK</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-content">
+            <div>
+              <span class="gallery-meta-tag"><i class="fa-solid fa-microscope"></i> Microsoldadura SMD // Laboratorio</span>
+              <h3 class="gallery-title">Recuperación de Placa con Corto Circuito</h3>
+              <p class="gallery-desc">
+                Dispositivo ingresado sin encender tras falla en la línea principal de alimentación (3.8V). Diagnóstico con cámara térmica, extracción del circuito integrado PMIC dañado y reballing de precisión con microhilo de cobre. Equipo revivido sin pérdida de datos.
+              </p>
+            </div>
+
+            <div class="gallery-footer-info">
+              <span><i class="fa-solid fa-clock"></i> Diagnóstico: <strong>48 hs</strong></span>
+              <span><i class="fa-solid fa-shield-halved"></i> Garantía: <strong>Ley 24.240</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRABAJO 2: CONSOLAS (PS5 PUERTO HDMI + METAL LÍQUIDO) -->
+        <div class="gallery-card" data-category="consolas">
+          <div class="gallery-visual-frame">
+            <div class="gallery-visual-split">
+              <!-- Lado Antes -->
+              <div class="split-side side-before">
+                <span class="split-badge badge-before">Antes</span>
+                <i class="fa-solid fa-plug-circle-xmark split-visual-icon icon-damaged"></i>
+                <span class="split-caption">HDMI Roto // Sin Imagen</span>
+              </div>
+              <!-- Lado Después -->
+              <div class="split-side side-after">
+                <span class="split-badge badge-after">Después</span>
+                <i class="fa-solid fa-tv split-visual-icon icon-repaired"></i>
+                <span class="split-caption">HDMI 4K 120Hz + Metal Líquido</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-content">
+            <div>
+              <span class="gallery-meta-tag"><i class="fa-brands fa-playstation"></i> PlayStation 5 // Consolas</span>
+              <h3 class="gallery-title">Reemplazo de Puerto HDMI & Pistas Dañadas</h3>
+              <p class="gallery-desc">
+                PS5 ingresada con el conector HDMI arrancado de raíz y pistas desprendidas. Se reconstruyeron las líneas de datos con hilo de cobre barnizado de 0.02mm, se montó conector OEM original y se renovó el metal líquido disipador de la APU.
+              </p>
+            </div>
+
+            <div class="gallery-footer-info">
+              <span><i class="fa-solid fa-bolt"></i> Tiempo: <strong>Mismo Día</strong></span>
+              <span><i class="fa-solid fa-gamepad"></i> Video: <strong>4K HDR OK</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRABAJO 3: NOTEBOOK / MACBOOK (BISAGRA RECONSTRUIDA + SSD) -->
+        <div class="gallery-card" data-category="notebooks">
+          <div class="gallery-visual-frame">
+            <div class="gallery-visual-split">
+              <!-- Lado Antes -->
+              <div class="split-side side-before">
+                <span class="split-badge badge-before">Antes</span>
+                <i class="fa-solid fa-heart-crack split-visual-icon icon-damaged"></i>
+                <span class="split-caption">Carcasa Partida // Lenta</span>
+              </div>
+              <!-- Lado Después -->
+              <div class="split-side side-after">
+                <span class="split-badge badge-after">Después</span>
+                <i class="fa-solid fa-laptop-code split-visual-icon icon-repaired"></i>
+                <span class="split-caption">Estructura Firme + SSD NVMe</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-content">
+            <div>
+              <span class="gallery-meta-tag"><i class="fa-solid fa-wrench"></i> Notebooks & Mac // Estructural</span>
+              <h3 class="gallery-title">Reconstrucción de Bisagras & Upgrade SSD</h3>
+              <p class="gallery-desc">
+                Notebook con anclajes plásticos reventados que impedían abrir la pantalla. Reconstrucción artesanal con resina estructural de alta resistencia, lubricación y calibración de bisagras. Además se instaló disco SSD NVMe, acelerando el arranque a 6 segundos.
+              </p>
+            </div>
+
+            <div class="gallery-footer-info">
+              <span><i class="fa-solid fa-gauge-high"></i> Rendimiento: <strong>10x Más Rápida</strong></span>
+              <span><i class="fa-solid fa-check"></i> Estructura: <strong>Reforzada</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRABAJO 4: CELULARES (IPHONE / ANDROID PANTALLA OLED) -->
+        <div class="gallery-card" data-category="celulares">
+          <div class="gallery-visual-frame">
+            <div class="gallery-visual-split">
+              <!-- Lado Antes -->
+              <div class="split-side side-before">
+                <span class="split-badge badge-before">Antes</span>
+                <i class="fa-solid fa-burst split-visual-icon icon-damaged"></i>
+                <span class="split-caption">Display Roto // Touch Muerto</span>
+              </div>
+              <!-- Lado Después -->
+              <div class="split-side side-after">
+                <span class="split-badge badge-after">Después</span>
+                <i class="fa-solid fa-mobile-screen split-visual-icon icon-repaired"></i>
+                <span class="split-caption">OLED Premium + Batería 100%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-content">
+            <div>
+              <span class="gallery-meta-tag"><i class="fa-brands fa-apple"></i> Apple iPhone & Android // Pantallas</span>
+              <h3 class="gallery-title">Cambio de Módulo OLED & Batería Nueva</h3>
+              <p class="gallery-desc">
+                Reemplazo de pantalla estallada con manchas negras. Instalación de módulo OLED de alta gama con calibración de color True Tone, sellado antipolvo nuevo y cambio de batería de alta densidad con ciclo al 100%.
+              </p>
+            </div>
+
+            <div class="gallery-footer-info">
+              <span><i class="fa-solid fa-bolt"></i> Tiempo: <strong>Express 2 Horas</strong></span>
+              <span><i class="fa-solid fa-certificate"></i> Garantía: <strong>30 Días</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add Photo Helper Notice for User -->
+      <div style="text-align: center; margin-top: 2.5rem; padding: 1.25rem; background: rgba(255,106,0,0.06); border: 1px dashed var(--border-tech); border-radius: 12px;">
+        <p style="color: var(--chrome-300); font-size: 0.92rem; margin-bottom: 0.5rem;">
+          <i class="fa-solid fa-camera" style="color: var(--orange-neon); margin-right: 0.5rem;"></i> <strong>Estructura lista para fotos reales:</strong> Podés sumar imágenes de tus trabajos directamente en la carpeta <code>assets/galeria/</code> en cualquier momento.
+        </p>
+        <a href="https://www.instagram.com/pmicreparaciones/" target="_blank" style="color: var(--orange-neon); font-family: var(--font-heading); font-weight: 700; text-decoration: none; text-transform: uppercase; font-size: 0.88rem; display: inline-flex; align-items: center; gap: 0.4rem;">
+          <i class="fa-brands fa-instagram"></i> Mirá videos y casos diarios en nuestro Instagram @pmicreparaciones <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
       </div>
     </div>
   </section>
@@ -560,6 +1086,226 @@
           <div class="step-icon-wrap"><i class="fa-solid fa-circle-check"></i></div>
           <h3 class="step-title">Entrega con Garantía</h3>
           <p class="step-desc">Te avisamos ni bien está listo. Probás todas las funciones y te lo llevás con garantía legal de 30 días según Ley 24.240 y tu Orden de Reparación©.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       TESTIMONIALS & REVIEWS SECTION
+       ========================================================================== -->
+  <section id="testimonios" class="testimonials-section">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-tag"><i class="fa-solid fa-star"></i> Opiniones Reales • Santa Rosa</span>
+        <h2 class="section-title">Lo Que Dicen Nuestros <span class="text-orange">Clientes</span></h2>
+        <p class="section-subtitle">
+          Experiencias reales de quienes confiaron la reparación de sus celulares, notebooks y consolas en nuestro laboratorio de Santa Rosa, La Pampa.
+        </p>
+      </div>
+
+      <!-- General Rating Banner -->
+      <div class="testimonials-stat-banner">
+        <div class="rating-big-box">
+          <span class="rating-big-num">5.0</span>
+          <div>
+            <div class="stars-row">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span class="rating-subtext">Calificación Excelente en Google & Redes</span>
+          </div>
+        </div>
+
+        <div style="height: 40px; width: 1px; background: var(--border-tech); display: none; @media(min-width: 768px){display: block;}"></div>
+
+        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+          <div>
+            <h4 style="font-family: var(--font-heading); font-size: 1.25rem; color: #fff; margin: 0;">+1.500</h4>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Equipos Reparados</span>
+          </div>
+          <div>
+            <h4 style="font-family: var(--font-heading); font-size: 1.25rem; color: #34d399; margin: 0;">100%</h4>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Garantía Legal Cumplida</span>
+          </div>
+          <div>
+            <h4 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--orange-neon); margin: 0;">Santa Rosa</h4>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">& Toda La Pampa</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reviews Grid -->
+      <div class="testimonials-grid">
+        <!-- Review 1 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-header">
+              <div class="testimonial-user">
+                <div class="user-avatar-circle">MV</div>
+                <div class="user-meta">
+                  <h4>Marcos Villalba</h4>
+                  <span><i class="fa-solid fa-circle-check"></i> Santa Rosa • Cliente Verificado</span>
+                </div>
+              </div>
+              <div class="stars-row">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+
+            <span class="device-badge-reviewed"><i class="fa-brands fa-playstation"></i> PlayStation 5 // Puerto HDMI + Metal Líquido</span>
+
+            <p class="testimonial-quote">
+              “Pensé que no tenía arreglo porque en otros dos lugares me dijeron que no hacían PS5. Chelo de PMIC me cambió el HDMI y le hizo cambio de metal líquido en el mismo día. La consola quedó impecable, silenciosa y en 4K. ¡Un genio total!”
+            </p>
+          </div>
+
+          <div class="testimonial-date">
+            <i class="fa-regular fa-clock"></i> Reparación reciente • Servicio Express
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-header">
+              <div class="testimonial-user">
+                <div class="user-avatar-circle">LG</div>
+                <div class="user-meta">
+                  <h4>Luciana Gómez</h4>
+                  <span><i class="fa-solid fa-circle-check"></i> Santa Rosa • Cliente Verificado</span>
+                </div>
+              </div>
+              <div class="stars-row">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+
+            <span class="device-badge-reviewed"><i class="fa-brands fa-apple"></i> MacBook Air M1 // Placa Mojada / Corto</span>
+
+            <p class="testimonial-quote">
+              “Se me volcó café sobre el teclado y la MacBook no prendió más. En el servicio oficial me decían de cambiar la placa entera por una fortuna. En PMIC hicieron microsoldadura y la salvaron sin perder nada de mis archivos de trabajo. Eternamente agradecida.”
+            </p>
+          </div>
+
+          <div class="testimonial-date">
+            <i class="fa-regular fa-clock"></i> Recuperación de placa en laboratorio
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-header">
+              <div class="testimonial-user">
+                <div class="user-avatar-circle">GF</div>
+                <div class="user-meta">
+                  <h4>Gastón Ferreyra</h4>
+                  <span><i class="fa-solid fa-circle-check"></i> Toay • Cliente Verificado</span>
+                </div>
+              </div>
+              <div class="stars-row">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+
+            <span class="device-badge-reviewed"><i class="fa-brands fa-android"></i> Samsung S23 Ultra // Módulo Original + Pin</span>
+
+            <p class="testimonial-quote">
+              “Excelente atención y rapidez. Me presupuestaron en 5 minutos por WhatsApp con el cotizador de la web y a la tarde ya lo tenía listo con pantalla original y cargando al 100%. Me dieron la garantía escrita de 30 días de la ley. Impecable servicio.”
+            </p>
+          </div>
+
+          <div class="testimonial-date">
+            <i class="fa-regular fa-clock"></i> Reparación en el día
+          </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-header">
+              <div class="testimonial-user">
+                <div class="user-avatar-circle">CS</div>
+                <div class="user-meta">
+                  <h4>Camila Santillán</h4>
+                  <span><i class="fa-solid fa-circle-check"></i> Santa Rosa • Cliente Verificado</span>
+                </div>
+              </div>
+              <div class="stars-row">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+
+            <span class="device-badge-reviewed"><i class="fa-solid fa-laptop"></i> Notebook Lenovo // Bisagra Rota + SSD NVMe</span>
+
+            <p class="testimonial-quote">
+              “No podía abrir la notebook porque la bisagra rompió toda la carcasa plástica. La dejaron súper firme, la reconstruyeron impecable y con el disco SSD nuevo vuela como cuando la compré. Muy honestos con el presupuesto.”
+            </p>
+          </div>
+
+          <div class="testimonial-date">
+            <i class="fa-regular fa-clock"></i> Reconstrucción estructural + Upgrade
+          </div>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-header">
+              <div class="testimonial-user">
+                <div class="user-avatar-circle">FR</div>
+                <div class="user-meta">
+                  <h4>Federico Rossi</h4>
+                  <span><i class="fa-solid fa-circle-check"></i> General Pico • Envío Comisionista</span>
+                </div>
+              </div>
+              <div class="stars-row">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+
+            <span class="device-badge-reviewed"><i class="fa-brands fa-apple"></i> Apple iPhone 13 Pro // Módulo OLED + Face ID</span>
+
+            <p class="testimonial-quote">
+              “Le mandé el teléfono desde Pico por comisionista. Me mantuvieron al tanto con fotos y videos de la reparación en el microscopio por WhatsApp. Cero cartel de pantalla cambiada y el Face ID funcionando perfecto. Súper profesionales.”
+            </p>
+          </div>
+
+          <div class="testimonial-date">
+            <i class="fa-regular fa-clock"></i> Envío desde el interior de La Pampa
+          </div>
+        </div>
+
+        <!-- Review 6 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-header">
+              <div class="testimonial-user">
+                <div class="user-avatar-circle">MC</div>
+                <div class="user-meta">
+                  <h4>Matías Cabrera</h4>
+                  <span><i class="fa-solid fa-circle-check"></i> Santa Rosa • Cliente Verificado</span>
+                </div>
+              </div>
+              <div class="stars-row">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+
+            <span class="device-badge-reviewed"><i class="fa-solid fa-gamepad"></i> Joystick PS5 DualSense // Drift Hall Effect</span>
+
+            <p class="testimonial-quote">
+              “Me solucionaron el drift cambiando los análogos por sensores magnéticos Hall Effect. Quedó mejor que nuevo, sin drift para siempre. El mejor laboratorio técnico de La Pampa lejos.”
+            </p>
+          </div>
+
+          <div class="testimonial-date">
+            <i class="fa-regular fa-clock"></i> Modding magnético anti-drift
+          </div>
         </div>
       </div>
     </div>
@@ -890,8 +1636,11 @@
           <h4>Navegación Rápida</h4>
           <ul class="footer-links-list">
             <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#especialidades">Servicios</a></li>
+            <li><a href="#trayectoria">Trayectoria & Expos</a></li>
+            <li><a href="#galeria">Galería Antes y Después</a></li>
             <li><a href="#cotizador">Cotizador a WhatsApp</a></li>
-            <li><a href="#por-que-pmic">Por Qué PMIC</a></li>
+            <li><a href="#testimonios">Reseñas de Clientes</a></li>
             <li><a href="#medios-pago">Medios de Pago</a></li>
             <li><a href="#garantia">Garantía Legal (Ley 24.240)</a></li>
             <li><a href="#contacto">Santa Rosa, La Pampa</a></li>
