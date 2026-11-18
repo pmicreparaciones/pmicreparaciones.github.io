@@ -58,6 +58,13 @@
           "@type": "GeoCoordinates",
           "latitude": -36.640415,
           "longitude": -64.290813
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "110",
+          "bestRating": "5",
+          "worstRating": "1"
         }
       }
     ]
@@ -189,15 +196,15 @@
       }
     }
 
-    /* Hero Banner Principal: Imagen de fondo del taller + Overlay oscuro + Nuevos Textos */
+    /* Hero Banner Principal: Microscopio despejado a la izquierda + Bloque de contenido a la derecha */
     .hero-section {
       position: relative;
       overflow: hidden;
       background-image:
-        linear-gradient(90deg, rgba(5, 6, 8, 0.92) 0%, rgba(10, 12, 16, 0.78) 55%, rgba(5, 6, 8, 0.88) 100%),
+        linear-gradient(90deg, rgba(5, 6, 8, 0.02) 0%, rgba(5, 6, 8, 0.08) 52%, rgba(8, 10, 15, 0.38) 72%, rgba(5, 6, 8, 0.58) 100%),
         url('assets/hero-taller.jpg');
       background-size: cover;
-      background-position: center;
+      background-position: left center;
       background-repeat: no-repeat;
     }
 
@@ -212,41 +219,219 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: left center;
       display: block;
     }
 
     .hero-bg-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, rgba(5, 6, 8, 0.90) 0%, rgba(10, 12, 16, 0.76) 55%, rgba(5, 6, 8, 0.86) 100%);
+      background: linear-gradient(
+        90deg,
+        rgba(5, 6, 8, 0.02) 0%,
+        rgba(5, 6, 8, 0.08) 52%,
+        rgba(8, 10, 15, 0.35) 70%,
+        rgba(5, 6, 8, 0.55) 100%
+      );
+    }
+
+    .hero-section .container.hero-grid {
+      max-width: 1440px;
+      width: 94%;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.22fr 0.78fr;
+      gap: 2.5rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-left-spacer {
+      min-height: 1px;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      grid-column: 2;
+      justify-self: end;
+      width: 100%;
+      max-width: 550px;
+      margin-left: auto;
+      position: relative;
+      z-index: 2;
+      background: rgba(8, 10, 15, 0.42);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 106, 0, 0.28);
+      border-radius: 20px;
+      padding: 2.1rem 2.2rem;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
     }
 
     .hero-headline {
-      margin-bottom: 0.4rem;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+      margin-bottom: 0.35rem;
+      text-shadow: 0 3px 16px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 0.9);
     }
 
     .hero-subheadline {
       font-family: var(--font-heading);
-      font-size: clamp(1.65rem, 3.2vw, 2.5rem);
+      font-size: clamp(1.6rem, 3vw, 2.35rem);
       font-weight: 800;
       line-height: 1.15;
       color: var(--orange-neon, #ff6a00);
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      margin-bottom: 1.25rem;
-      text-shadow: 0 0 20px rgba(255, 106, 0, 0.45);
+      margin-bottom: 1.15rem;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95), 0 0 18px rgba(255, 106, 0, 0.45);
     }
 
     .hero-description {
       color: var(--chrome-100, #ffffff);
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 1px 3px rgba(0, 0, 0, 0.9);
+      margin-bottom: 1.65rem;
+      font-size: 1.12rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.75rem;
+    }
+
+    .btn-whatsapp-outline {
+      border: 1px solid rgba(37, 211, 102, 0.65) !important;
+      background: rgba(10, 14, 20, 0.65) !important;
+    }
+
+    .btn-whatsapp-outline:hover {
+      border-color: #25d366 !important;
+      box-shadow: 0 0 20px rgba(37, 211, 102, 0.35) !important;
+      background: rgba(37, 211, 102, 0.18) !important;
+    }
+
+    .hero-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .highlight-icon {
+      width: 36px;
+      height: 36px;
+      font-size: 0.95rem;
+      background: rgba(255, 106, 0, 0.18);
+    }
+
+    .highlight-text h4 {
+      font-size: 0.86rem;
+      line-height: 1.2;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.95);
+    }
+
+    .highlight-text p {
+      font-size: 0.72rem;
+      line-height: 1.25;
+      color: var(--chrome-200, #e2e8f0);
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.95);
     }
 
     @media (max-width: 1024px) {
       .hero-bg-overlay {
-        background: linear-gradient(180deg, rgba(5, 6, 8, 0.88) 0%, rgba(10, 12, 16, 0.82) 50%, rgba(5, 6, 8, 0.92) 100%);
+        background: linear-gradient(180deg, rgba(5, 6, 8, 0.30) 0%, rgba(10, 12, 16, 0.55) 50%, rgba(5, 6, 8, 0.82) 100%);
+      }
+      .hero-section .container.hero-grid {
+        width: 100%;
+      }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+      }
+      .hero-left-spacer {
+        display: none;
+      }
+      .hero-content {
+        grid-column: 1;
+        justify-self: center;
+        max-width: 620px;
+        margin: 0 auto;
+        padding: 1.9rem 1.65rem;
+        background: rgba(8, 10, 15, 0.52);
+      }
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+      .hero-highlights {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-section {
+        padding-top: 7.5rem;
+        padding-bottom: 3.5rem;
+        min-height: auto;
+      }
+      .hero-content {
+        padding: 1.45rem 1.15rem;
+        border-radius: 16px;
+        background: rgba(8, 10, 15, 0.56);
+      }
+      .hero-badge-live {
+        font-size: 0.73rem;
+        padding: 0.35rem 0.75rem;
+        line-height: 1.35;
+        text-align: center;
+        justify-content: center;
+      }
+      .hero-headline {
+        font-size: clamp(2rem, 8.5vw, 2.6rem);
+      }
+      .hero-subheadline {
+        font-size: clamp(1.3rem, 5.8vw, 1.75rem);
+      }
+      .hero-description {
+        font-size: 0.98rem;
+        margin-bottom: 1.4rem;
+      }
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.8rem;
+        margin-bottom: 1.6rem;
+      }
+      .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+      }
+      .hero-highlights {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+      .highlight-item {
+        background: rgba(8, 10, 15, 0.45);
+        padding: 0.6rem 0.85rem;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
       }
     }
 
@@ -279,6 +464,166 @@
       .google-reviews-grid { grid-template-columns: 1fr; }
       .google-review-card { padding: 1.5rem; }
       .google-rating-badge { font-size: 0.92rem; padding: 0.55rem 1rem; }
+    }
+
+    /* Trayectoria y Galería de Eventos con Referentes */
+    .trayectoria-intro-box {
+      background: linear-gradient(145deg, rgba(15, 19, 27, 0.85) 0%, rgba(8, 10, 15, 0.92) 100%);
+      border: 1px solid rgba(255, 106, 0, 0.32);
+      border-left: 4px solid var(--orange-neon, #ff6a00);
+      border-radius: 14px;
+      padding: 1.35rem 1.5rem;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+    }
+
+    .trayectoria-intro-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--orange-neon, #ff6a00);
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      margin-bottom: 0.5rem;
+    }
+
+    .trayectoria-intro-text {
+      font-size: 0.98rem;
+      line-height: 1.68;
+      color: var(--chrome-200, #e2e8f0);
+      margin: 0;
+    }
+
+    .trayectoria-intro-text strong {
+      color: var(--orange-light, #ff9d3b);
+      font-weight: 700;
+    }
+
+    .trayectoria-gallery-block {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255, 106, 0, 0.22);
+    }
+
+    .trayectoria-gallery-header {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .trayectoria-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.6rem;
+    }
+
+    .trayectoria-photo-card {
+      background: var(--bg-card, #0f131b);
+      border: 1px solid rgba(255, 106, 0, 0.3);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
+    }
+
+    .trayectoria-photo-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--orange-neon, #ff6a00);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85), 0 0 22px rgba(255, 106, 0, 0.25);
+    }
+
+    .trayectoria-photo-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      background: #07090d;
+    }
+
+    .trayectoria-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 22%;
+      display: block;
+      transition: transform 0.45s ease;
+    }
+
+    .trayectoria-photo-card:hover .trayectoria-photo-img {
+      transform: scale(1.04);
+    }
+
+    .trayectoria-photo-pill {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 0.3rem 0.75rem;
+      background: rgba(5, 6, 8, 0.86);
+      border: 1px solid rgba(255, 106, 0, 0.45);
+      border-radius: 999px;
+      font-family: var(--font-heading);
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--orange-light, #ff9d3b);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      backdrop-filter: blur(6px);
+    }
+
+    .trayectoria-photo-caption {
+      padding: 1.1rem 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background: linear-gradient(180deg, rgba(15, 19, 27, 0.95) 0%, rgba(10, 12, 18, 0.98) 100%);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.28rem;
+    }
+
+    .trayectoria-photo-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--chrome-100, #ffffff);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0;
+    }
+
+    .trayectoria-photo-sub {
+      font-size: 0.83rem;
+      color: var(--orange-light, #ff9d3b);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 500;
+    }
+
+    @media (max-width: 992px) {
+      .trayectoria-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .trayectoria-gallery-block {
+        margin-top: 2.8rem;
+        padding-top: 2.2rem;
+      }
+      .trayectoria-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      .trayectoria-photo-img-wrap {
+        height: 270px;
+      }
     }
   </style>
 </head>
@@ -376,18 +721,21 @@
        HERO SECTION
        ========================================================================== -->
   <section id="inicio" class="hero-section">
-    <!-- Imagen de fondo del Hero Banner con overlay oscuro semitransparente -->
+    <!-- Imagen de fondo del Hero Banner con microscopio despejado a la izquierda -->
     <div class="hero-bg-media" aria-hidden="true">
       <img src="assets/hero-taller.jpg" alt="Laboratorio de Microelectrónica PMIC Reparaciones" class="hero-bg-img">
       <div class="hero-bg-overlay"></div>
     </div>
 
     <div class="container hero-grid">
-      <!-- Left Column: Copy & Actions -->
+      <!-- Columna Izquierda Libre: Deja visible el microscopio en Desktop -->
+      <div class="hero-left-spacer" aria-hidden="true"></div>
+
+      <!-- Columna Derecha: Bloque de Contenido Principal -->
       <div class="hero-content">
 
         <div class="hero-badge-live">
-          <i class="fa-solid fa-microchip"></i> Laboratorio Especializado en Santa Rosa, La Pampa
+          <i class="fa-solid fa-microchip"></i> LABORATORIO ESPECIALIZADO EN SANTA ROSA, LA PAMPA
         </div>
 
         <h1 class="hero-headline">
@@ -395,23 +743,23 @@
         </h1>
 
         <h2 class="hero-subheadline">
-          Microelectrónica
+          MICROELECTRÓNICA
         </h2>
 
         <p class="hero-description">
-          Mantenimiento y reparación de celulares (<strong>Android iPhone</strong>) <strong>Notebook</strong>, <strong>Playstation</strong>.
+          Mantenimiento y reparación de celulares (<strong>Android iPhone</strong>), <strong>Notebook</strong>, <strong>Playstation</strong>.
         </p>
 
         <div class="hero-actions">
           <a href="#cotizador" class="btn btn-primary">
-            <i class="fa-solid fa-calculator"></i> Cotizador Interactivo
+            <i class="fa-solid fa-calculator"></i> COTIZADOR INTERACTIVO
           </a>
-          <a href="https://wa.me/5492954274960?text=Hola%20PMIC%20Reparaciones!%20Necesito%20presupuesto%20para%20un%20equipo." target="_blank" class="btn btn-secondary">
-            <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i> WhatsApp Directo
+          <a href="https://wa.me/5492954274960?text=Hola%20PMIC%20Reparaciones!%20Necesito%20presupuesto%20para%20un%20equipo." target="_blank" class="btn btn-secondary btn-whatsapp-outline">
+            <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i> WHATSAPP DIRECTO
           </a>
         </div>
 
-        <!-- Trust Highlights -->
+        <!-- Fila Inferior de Insignias de Confianza (3 columnas compactas) -->
         <div class="hero-highlights">
           <div class="highlight-item">
             <div class="highlight-icon"><i class="fa-solid fa-bolt"></i></div>
@@ -608,62 +956,113 @@
   </section>
 
   <!-- ==========================================================================
-       WHY CHOOSE PMIC (LAB BENEFITS & FLYER EMBED)
+       WHY CHOOSE PMIC (LAB BENEFITS & EVENT GALLERY)
        ========================================================================== -->
   <section id="por-que-pmic" class="why-section">
-    <div class="container why-grid">
-      <!-- Flyer / Taller Showcase Frame -->
-      <div class="why-banner-frame">
-        <img src="assets/mi-taller.jpg" alt="Laboratorio Técnico PMIC Reparaciones en Santa Rosa" class="why-banner-img" onerror="this.onerror=null; this.src='assets/20260319_101348.jpg';">
-        <div class="why-badge-floating">
-          <i class="fa-solid fa-medal"></i>
-          <div>
-            <h5>Laboratorio en Santa Rosa</h5>
-            <p>Diagnóstico certero y repuestos garantizados</p>
+    <div class="container">
+      <div class="why-grid">
+        <!-- Flyer / Taller Showcase Frame -->
+        <div class="why-banner-frame">
+          <img src="assets/mi-taller.jpg" alt="Laboratorio Técnico PMIC Reparaciones en Santa Rosa" class="why-banner-img" onerror="this.onerror=null; this.src='assets/20260319_101348.jpg';">
+          <div class="why-badge-floating">
+            <i class="fa-solid fa-medal"></i>
+            <div>
+              <h5>Laboratorio en Santa Rosa</h5>
+              <p>Diagnóstico certero y repuestos garantizados</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature Points (Original Version) -->
+        <div class="why-details">
+          <span class="section-tag"><i class="fa-solid fa-microchip"></i> Por Qué Elegirnos</span>
+          <h2 class="section-title">El Respaldo Técnico que <span class="text-orange">Marcá la Diferencia</span></h2>
+          <p class="section-subtitle" style="margin-bottom: 2rem;">
+            En Santa Rosa, La Pampa, somos el laboratorio elegido por usuarios y empresas cuando necesitan una solución definitiva y sin rodeos.
+          </p>
+
+          <div class="features-list">
+            <div class="feature-box">
+              <div class="feature-icon"><i class="fa-solid fa-microscope"></i></div>
+              <div class="feature-info">
+                <h3>Instrumental de Microelectrónica</h3>
+                <p>No tercerizamos. Soldamos componentes SMD, reparamos líneas de placa y realizamos diagnósticos con microscopio trinocular en nuestro propio taller.</p>
+              </div>
+            </div>
+
+            <div class="feature-box">
+              <div class="feature-icon"><i class="fa-solid fa-stopwatch-20"></i></div>
+              <div class="feature-info">
+                <h3>Reparaciones Express en el Día</h3>
+                <p>Sabemos lo urgente que es tu celular o notebook. Los cambios de pantallas, baterías y pines de carga se resuelven habitualmente en horas.</p>
+              </div>
+            </div>
+
+            <div class="feature-box">
+              <div class="feature-icon"><i class="fa-solid fa-shield-check"></i></div>
+              <div class="feature-info">
+                <h3>Garantía Legal de 30 Días (Ley 24.240)</h3>
+                <p>Toda reparación efectuada cuenta con una garantía de 30 días según la Ley 24.240 de Defensa del Consumidor, contados desde la fecha de aviso de reparado, con Orden de Reparación oficial.</p>
+              </div>
+            </div>
+
+            <div class="feature-box">
+              <div class="feature-icon"><i class="fa-solid fa-user-shield"></i></div>
+              <div class="feature-info">
+                <h3>Privacidad Absoluta de tus Datos</h3>
+                <p>Tus fotos, chats y archivos privados están seguros. Cumplimos con estrictas normas de confidencialidad en cada equipo ingresado.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Feature Points -->
-      <div class="why-details">
-        <span class="section-tag"><i class="fa-solid fa-microchip"></i> Por Qué Elegirnos</span>
-        <h2 class="section-title">El Respaldo Técnico que <span class="text-orange">Marcá la Diferencia</span></h2>
-        <p class="section-subtitle" style="margin-bottom: 2rem;">
-          En Santa Rosa, La Pampa, somos el laboratorio elegido por usuarios y empresas cuando necesitan una solución definitiva y sin rodeos.
-        </p>
+      <!-- Sección: Encuentros y Capacitación Continua (Presencia en Eventos Nacionales) -->
+      <div class="trayectoria-gallery-block">
+        <div class="trayectoria-gallery-header">
+          <span class="section-tag"><i class="fa-solid fa-camera"></i> Presencia en Eventos Nacionales</span>
+          <h3 class="section-title" style="font-size: clamp(1.7rem, 3vw, 2.3rem);">Encuentros y <span class="text-orange">Capacitación Continua</span></h3>
+          <p class="section-subtitle" style="max-width: 860px; margin: 0.85rem auto 0; line-height: 1.75; color: var(--chrome-200);">
+            PMIC Reparaciones participa activamente en las exposiciones y encuentros de microelectrónica más destacados del país, como <strong>Fix Expo La Pampa (siendo organizadores del evento en su edición 2026)</strong> y como <strong>invitado especial de la Expo Repara Rosario</strong>. Compartimos experiencias, ponencias y jornadas de capacitación técnica avanzada junto a reconocidos referentes del sector como <strong>Jaider Durán, Edgar Aguirre y Wilson Cosabalente</strong>. Nuestra presencia continua en estos eventos garantiza la vanguardia en métodos de diagnóstico y reparación de última generación.
+          </p>
+        </div>
 
-        <div class="features-list">
-          <div class="feature-box">
-            <div class="feature-icon"><i class="fa-solid fa-microscope"></i></div>
-            <div class="feature-info">
-              <h3>Instrumental de Microelectrónica</h3>
-              <p>No tercerizamos. Soldamos componentes SMD, reparamos líneas de placa y realizamos diagnósticos con microscopio trinocular en nuestro propio taller.</p>
+        <div class="trayectoria-gallery-grid">
+          <!-- Foto 1: Jaider Durán -->
+          <figure class="trayectoria-photo-card">
+            <div class="trayectoria-photo-img-wrap">
+              <img src="assets/Jaiden Duran.jpeg" alt="Chelo de PMIC Reparaciones junto a Jaider Durán en Expo Repara Rosario" class="trayectoria-photo-img" loading="lazy">
+              <span class="trayectoria-photo-pill"><i class="fa-solid fa-star"></i> Expo Repara Rosario</span>
             </div>
-          </div>
+            <figcaption class="trayectoria-photo-caption">
+              <h4 class="trayectoria-photo-title">Junto a Jaider Durán</h4>
+              <p class="trayectoria-photo-sub"><i class="fa-solid fa-microchip"></i> Capacitación y encuentros con referentes de microelectrónica</p>
+            </figcaption>
+          </figure>
 
-          <div class="feature-box">
-            <div class="feature-icon"><i class="fa-solid fa-stopwatch-20"></i></div>
-            <div class="feature-info">
-              <h3>Reparaciones Express en el Día</h3>
-              <p>Sabemos lo urgente que es tu celular o notebook. Los cambios de pantallas, baterías y pines de carga se resuelven habitualmente en horas.</p>
+          <!-- Foto 2: Edgar Aguirre -->
+          <figure class="trayectoria-photo-card">
+            <div class="trayectoria-photo-img-wrap">
+              <img src="assets/Edgar Aguirre.jpeg" alt="Chelo de PMIC Reparaciones junto a Edgar Aguirre en Expo Repara Rosario" class="trayectoria-photo-img" loading="lazy">
+              <span class="trayectoria-photo-pill"><i class="fa-solid fa-star"></i> Expo Repara Rosario</span>
             </div>
-          </div>
+            <figcaption class="trayectoria-photo-caption">
+              <h4 class="trayectoria-photo-title">Junto a Edgar Aguirre</h4>
+              <p class="trayectoria-photo-sub"><i class="fa-solid fa-microchip"></i> Capacitación y encuentros con referentes de microelectrónica</p>
+            </figcaption>
+          </figure>
 
-          <div class="feature-box">
-            <div class="feature-icon"><i class="fa-solid fa-shield-check"></i></div>
-            <div class="feature-info">
-              <h3>Garantía Legal de 30 Días (Ley 24.240)</h3>
-              <p>Toda reparación efectuada cuenta con una garantía de 30 días según la Ley 24.240 de Defensa del Consumidor, contados desde la fecha de aviso de reparado, con Orden de Reparación oficial.</p>
+          <!-- Foto 3: Wilson Cosabalente (Centrada con object-position: center center) -->
+          <figure class="trayectoria-photo-card">
+            <div class="trayectoria-photo-img-wrap">
+              <img src="assets/Wilson  Cosavalente.jpeg" alt="Certificación técnica junto a Wilson Cosabalente" class="trayectoria-photo-img" style="object-position: center center;" loading="lazy">
+              <span class="trayectoria-photo-pill"><i class="fa-solid fa-certificate"></i> Certificación Técnica</span>
             </div>
-          </div>
-
-          <div class="feature-box">
-            <div class="feature-icon"><i class="fa-solid fa-user-shield"></i></div>
-            <div class="feature-info">
-              <h3>Privacidad Absoluta de tus Datos</h3>
-              <p>Tus fotos, chats y archivos privados están seguros. Cumplimos con estrictas normas de confidencialidad en cada equipo ingresado.</p>
-            </div>
-          </div>
+            <figcaption class="trayectoria-photo-caption">
+              <h4 class="trayectoria-photo-title">Junto a Wilson Cosabalente</h4>
+              <p class="trayectoria-photo-sub"><i class="fa-solid fa-microchip"></i> Capacitación y encuentros con referentes de microelectrónica</p>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </div>
