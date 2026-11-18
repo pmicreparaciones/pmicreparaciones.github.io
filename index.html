@@ -249,6 +249,37 @@
         background: linear-gradient(180deg, rgba(5, 6, 8, 0.88) 0%, rgba(10, 12, 16, 0.82) 50%, rgba(5, 6, 8, 0.92) 100%);
       }
     }
+
+    /* Prueba Social y Reseñas de Google */
+    .google-rating-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 1.25rem;
+      padding: 0.6rem 1.3rem;
+      background: rgba(255, 106, 0, 0.1);
+      border: 1px solid var(--orange-neon, #ff6a00);
+      border-radius: 999px;
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      letter-spacing: 0.5px;
+      color: var(--chrome-100, #fff);
+      box-shadow: 0 0 22px rgba(255, 106, 0, 0.25);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .google-rating-star { color: #ffb800; font-size: 1.35rem; line-height: 1; }
+    .google-rating-badge strong { color: var(--orange-neon, #ff6a00); }
+    .google-rating-count { color: var(--text-muted, #94a3b8); }
+    .google-reviews-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .google-review-card { border-top: 3px solid var(--orange-neon, #ff6a00); }
+    .google-review-card .user-meta span { color: var(--text-muted, #94a3b8); }
+    .google-review-card .user-meta span .fa-google { color: var(--orange-light, #ff9d3b); }
+    @media (max-width: 600px) {
+      .google-reviews-grid { grid-template-columns: 1fr; }
+      .google-review-card { padding: 1.5rem; }
+      .google-rating-badge { font-size: 0.92rem; padding: 0.55rem 1rem; }
+    }
   </style>
 </head>
 <body>
@@ -280,6 +311,7 @@
           <li><a href="#inicio" class="nav-link">Inicio</a></li>
           <li><a href="#cotizador" class="nav-link">Cotizador</a></li>
           <li><a href="#por-que-pmic" class="nav-link">Laboratorio</a></li>
+          <li><a href="#resenas" class="nav-link">Reseñas</a></li>
           <li><a href="#medios-pago" class="nav-link">Pagos</a></li>
           <li><a href="#garantia" class="nav-link">Garantía</a></li>
           <li><a href="#contacto" class="nav-link">Contacto</a></li>
@@ -322,6 +354,7 @@
       <a href="#inicio" class="mobile-nav-link"><span>Inicio</span> <i class="fa-solid fa-chevron-right"></i></a>
       <a href="#cotizador" class="mobile-nav-link"><span>Cotizador Interactivo WhatsApp</span> <i class="fa-solid fa-bolt text-orange"></i></a>
       <a href="#por-que-pmic" class="mobile-nav-link"><span>Laboratorio & Diagnóstico</span> <i class="fa-solid fa-microchip text-orange"></i></a>
+      <a href="#resenas" class="mobile-nav-link"><span>Reseñas de Google (5.0 ★)</span> <i class="fa-solid fa-star text-orange"></i></a>
       <a href="#medios-pago" class="mobile-nav-link"><span>Medios de Pago</span> <i class="fa-solid fa-chevron-right"></i></a>
       <a href="#garantia" class="mobile-nav-link"><span>Garantía Legal (Ley 24.240)</span> <i class="fa-solid fa-shield-halved text-orange"></i></a>
       <a href="#contacto" class="mobile-nav-link"><span>Ubicación & Teléfono</span> <i class="fa-solid fa-chevron-right"></i></a>
@@ -404,45 +437,6 @@
         </div>
       </div>
 
-      <!-- Right Column: Interactive 3D Cyber Chip Card -->
-      <div class="hero-visual">
-        <div class="tech-card-3d">
-          <div class="tech-card-header">
-            <div class="terminal-dots">
-              <span class="terminal-dot dot-red"></span>
-              <span class="terminal-dot dot-yellow"></span>
-              <span class="terminal-dot dot-green"></span>
-            </div>
-            <span class="tech-card-badge">PMIC // LAB DIAGNOSTIC</span>
-          </div>
-
-          <!-- Chip Visual with Laser Scan -->
-          <div class="chip-showcase-container">
-            <img src="assets/chip-logo-clean.png" alt="PMIC Microchip" class="chip-showcase-img">
-            <div class="chip-radar-scan"></div>
-          </div>
-
-          <!-- Supported Devices Pills -->
-          <div class="tech-card-footer">
-            <div class="supported-device-pill">
-              <i class="fa-brands fa-android"></i>
-              <span>Android</span>
-            </div>
-            <div class="supported-device-pill">
-              <i class="fa-brands fa-apple"></i>
-              <span>iPhone</span>
-            </div>
-            <div class="supported-device-pill">
-              <i class="fa-solid fa-laptop"></i>
-              <span>Notebook</span>
-            </div>
-            <div class="supported-device-pill">
-              <i class="fa-brands fa-playstation"></i>
-              <span>PlayStation</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -716,6 +710,125 @@
           <h3 class="step-title">Entrega con Garantía</h3>
           <p class="step-desc">Te avisamos ni bien está listo. Probás todas las funciones y te lo llevás con garantía legal de 30 días según Ley 24.240 y tu Orden de Reparación©.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PRUEBA SOCIAL Y RESEÑAS DE GOOGLE
+       ========================================================================== -->
+  <section id="resenas" class="testimonials-section">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-tag"><i class="fa-brands fa-google"></i> Opiniones Reales</span>
+        <h2 class="section-title">Prueba Social <span class="text-orange">y Reseñas</span></h2>
+        <p class="section-subtitle">
+          La confianza de nuestros clientes en Santa Rosa es nuestra mejor carta de presentación
+        </p>
+        <div class="google-rating-badge">
+          <span class="google-rating-star">&#9733;</span>
+          <span><strong>5.0 Estrellas</strong> en Google Mi Negocio <span class="google-rating-count">(+100 opiniones reales)</span></span>
+        </div>
+      </div>
+
+      <div class="testimonials-grid google-reviews-grid">
+        <article class="testimonial-card google-review-card">
+          <div>
+            <div class="testimonial-header">
+              <div class="testimonial-user">
+                <div class="user-avatar-circle">GB</div>
+                <div class="user-meta">
+                  <h4>GRACIELA BLANCO</h4>
+                  <span><i class="fa-brands fa-google"></i> Graciela B. &bull; Reseña de Google</span>
+                </div>
+              </div>
+            </div>
+            <div class="stars-row" aria-label="5 de 5 estrellas" style="margin-bottom: 0.9rem;">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-quote">
+              &ldquo;Quiero agradecer y recomendar a Marcelo de PMIC Reparaciones. Tenía un Xiaomi Redmi con una falla que habían dado por perdido en otro lugar, Marcelo lo revisó, me explicó con sinceridad cuál era el problema y se comprometió a solucionarlo. Total transparencia y profesionalismo.&rdquo;
+            </p>
+          </div>
+          <div class="testimonial-date">
+            <i class="fa-solid fa-circle-check" style="color: #34d399;"></i> Cliente verificado &bull; 5 estrellas
+          </div>
+        </article>
+
+        <article class="testimonial-card google-review-card">
+          <div>
+            <div class="testimonial-header">
+              <div class="testimonial-user">
+                <div class="user-avatar-circle">FM</div>
+                <div class="user-meta">
+                  <h4>FACUNDO MARTINEZ LASCA</h4>
+                  <span><i class="fa-brands fa-google"></i> Facundo M. &bull; Reseña de Google</span>
+                </div>
+              </div>
+            </div>
+            <div class="stars-row" aria-label="5 de 5 estrellas" style="margin-bottom: 0.9rem;">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-quote">
+              &ldquo;Super recomendable, asesoramiento, atención, rapidez, precio, todo diez puntos. Si necesitan una reparación es acá, no lo duden.&rdquo;
+            </p>
+          </div>
+          <div class="testimonial-date">
+            <i class="fa-solid fa-circle-check" style="color: #34d399;"></i> Cliente verificado &bull; 5 estrellas
+          </div>
+        </article>
+
+        <article class="testimonial-card google-review-card">
+          <div>
+            <div class="testimonial-header">
+              <div class="testimonial-user">
+                <div class="user-avatar-circle">MA</div>
+                <div class="user-meta">
+                  <h4>MARIANELA ACEVEDO</h4>
+                  <span><i class="fa-brands fa-google"></i> Marianela A. &bull; Reseña de Google</span>
+                </div>
+              </div>
+            </div>
+            <div class="stars-row" aria-label="5 de 5 estrellas" style="margin-bottom: 0.9rem;">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-quote">
+              &ldquo;Excelente servicio. Siempre brinda una atención muy profesional, trabaja con rapidez y explica todo con claridad. Es un técnico muy confiable, con precios justos y un trato excelente. Lo recomiendo totalmente.&rdquo;
+            </p>
+          </div>
+          <div class="testimonial-date">
+            <i class="fa-solid fa-circle-check" style="color: #34d399;"></i> Cliente verificado &bull; 5 estrellas
+          </div>
+        </article>
+
+        <article class="testimonial-card google-review-card">
+          <div>
+            <div class="testimonial-header">
+              <div class="testimonial-user">
+                <div class="user-avatar-circle">SF</div>
+                <div class="user-meta">
+                  <h4>SANTIAGO FUNES</h4>
+                  <span><i class="fa-brands fa-google"></i> Santiago F. &bull; Reseña de Google</span>
+                </div>
+              </div>
+            </div>
+            <div class="stars-row" aria-label="5 de 5 estrellas" style="margin-bottom: 0.9rem;">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-quote">
+              &ldquo;Excelente técnico, precios y responsabilidad a la hora de trabajar en las reparaciones de los equipos que he llevado. Muy recomendable para cualquier tipo de trabajo tanto en iPhone como Android, recomiendo sin dudarlo.&rdquo;
+            </p>
+          </div>
+          <div class="testimonial-date">
+            <i class="fa-solid fa-circle-check" style="color: #34d399;"></i> Cliente verificado &bull; 5 estrellas
+          </div>
+        </article>
+      </div>
+
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=PMIC+Reparaciones+Santa+Rosa+La+Pampa" target="_blank" rel="noopener" class="btn btn-secondary">
+          <i class="fa-brands fa-google"></i> Ver todas las reseñas en Google
+        </a>
       </div>
     </div>
   </section>
@@ -1059,6 +1172,7 @@
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#cotizador">Cotizador a WhatsApp</a></li>
             <li><a href="#por-que-pmic">Laboratorio & Diagnóstico</a></li>
+            <li><a href="#resenas">Reseñas de Clientes</a></li>
             <li><a href="#medios-pago">Medios de Pago</a></li>
             <li><a href="#garantia">Garantía Legal (Ley 24.240)</a></li>
             <li><a href="#contacto">Santa Rosa, La Pampa</a></li>
